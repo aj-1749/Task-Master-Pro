@@ -40,7 +40,7 @@ jobs:
 
     - name: Build Docker Image
       run: |
-        docker build -t adijaiswal/devtaskmaster:latest .
+        docker build -t hello8989/devtaskmaster:latest .
 
     - name: Trivy Image scan
       run: trivy image --format table -o image.html adijaiswal/devtaskmaster:latest
@@ -53,7 +53,7 @@ jobs:
 
     - name: Push Docker Image
       run: |
-          docker push adijaiswal/devtaskmaster:latest
+          docker push hello8989/devtaskmaster:latest
 
     - name: Kubectl Action
       uses: tale/kubectl-action@v1
