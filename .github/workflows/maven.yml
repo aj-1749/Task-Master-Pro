@@ -22,15 +22,17 @@ jobs:
 
     - name: Push Docker Image
       run: |
-          docker pull adijaiswal/devtaskmaster:latest
-          docker tag adijaiswal/devtaskmaster:latest adijaiswal/prodtaskmaster:latest
-          docker push adijaiswal/prodtaskmaster:latest
+          docker pull hello8989/devtaskmaster:latest
+          docker tag hello8989/devtaskmaster:latest hello8989/prodtaskmaster:latest
+          docker push hello8989/prodtaskmaster:latest
     - name: Kubectl Action
       uses: tale/kubectl-action@v1
       with:
         base64-kube-config: ${{ secrets.KUBE_CONFIG_PROD }}
     - run: |
           kubectl apply -f deployment-service.yml
+          kubectl get svc
+          
       
 
    
